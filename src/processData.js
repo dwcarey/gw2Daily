@@ -1,3 +1,5 @@
+import { DOMcontroller } from './DOMcontroller';
+
 const processedData = [];
 
 function processCurrencyData(currencyList, currencyAccount) {
@@ -42,6 +44,7 @@ function getFirstData(key) {
     const getCurrencyDataTemp = await getCurrencyData();
     const getAccountCurrencyDataTemp = await getAccountCurrencyData();
     processCurrencyData(getCurrencyDataTemp, getAccountCurrencyDataTemp);
+    DOMcontroller(processedData);
   }());
 }
 export { getFirstData, processedData };
